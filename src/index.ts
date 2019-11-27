@@ -8,8 +8,14 @@ const main = async () => {
   const key = core.getInput("key");
   const outputName = core.getInput("output-name");
   const outputFile = core.getInput("output-file");
-  const value = await getOutput(bucket, key, outputName);
-  await promisify(fs.writeFile)(outputFile, value);
+  const value = await getOutput(bucket, key, outputName).catch(
+    (error: Error) => {
+      core.setFailed(error.message);
+    }
+  );
+  await promisify(fs.writeFile)(outputFile, value).catch((error: Error) => {
+    core.setFailed(error.message);
+  });
 };
 
 if (require.main === module) {
