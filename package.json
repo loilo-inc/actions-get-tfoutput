@@ -1,0 +1,27 @@
+{
+  "name": "get-tfoutput",
+  "version": "1.0.0",
+  "author": "YutoUrakami <urakami@loilo.tv>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --forceExit",
+    "fmt": "prettier --write '**/*.ts'"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "aws-sdk": "^2.580.0"
+  },
+  "devDependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.7",
+    "@zeit/ncc": "^0.20.5",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.7.2"
+  }
+}

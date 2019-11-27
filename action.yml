@@ -1,0 +1,18 @@
+name: "Get terraform output value"
+description: "Get and write out terraform output value saved on AWS S3"
+inputs:
+  bucket:
+    description: "the name of S3 bucket including terraform state file"
+    required: true
+  key:
+    description: "the key where terraform state file saved"
+    required: true
+  output-name:
+    description: "output resource name"
+    required: true
+  output-file:
+    description: "write output value to the specified file"
+    required: true
+runs:
+  using: 'node12'
+  main: 'lib/index.js'
